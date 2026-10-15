@@ -1,5 +1,13 @@
 # cto-ai
 
+## Table Of Contents
+<!-- TOC -->
+- [Table Of Contents](#table-of-contents)
+- [Beginner guide](#beginner-guide)
+- [Hackathon resources](#hackathon-resources)
+<!-- /TOC -->
+
+
 Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered by FalkorDB), team `cto-ai`.
 
 ## Beginner guide
@@ -29,10 +37,10 @@ A short course for absolute beginners lives inside the resource collection at `D
 Everything below lives in the relative directory `Documents /Hackathon-resources /`.
 (The folder names have trailing spaces — copy paths exactly as written.)
 
-### Event page
+Event page
 - The hackathon landing page for this event (tracks, prizes, schedule, rules, resources, submission form). — `Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
 
-### FalkorDB official documentation (saved web pages)
+FalkorDB official documentation (saved web pages)
 - FalkorDB documentation home — what the database is and how the docs are organized. — `FalkorDB Documentation _ Graph Database for GraphRAG & GenAI - FalkorDB Docs.mhtml`
 - Getting started guide: installation, data modeling, and running queries. — `Getting Started with FalkorDB_ Installation, Modeling & Queries - FalkorDB Docs.mhtml`
 - How to deploy FalkorDB with Docker and Docker Compose. — `Deploy FalkorDB with Docker and Docker Compose - FalkorDB Docs.mhtml`
@@ -42,7 +50,7 @@ Everything below lives in the relative directory `Documents /Hackathon-resources
 - Cypher query language reference for FalkorDB. — `Cypher Query Language Reference for FalkorDB - FalkorDB Docs.mhtml`
 - Graph algorithms in FalkorDB for high-performance network analysis. — `Graph Algorithms in FalkorDB_ High-Performance Network Analysis - FalkorDB Docs.mhtml`
 
-### FalkorDB repos, Docker, and cloud (saved web pages)
+FalkorDB repos, Docker, and cloud (saved web pages)
 - FalkorDB's main GitHub repo page (fast GraphBLAS-based graph database for GraphRAG). — `FalkorDB_FalkorDB_ A super fast Graph Database uses GraphBLAS under the hood for its sparse adjacency matrix graph representation. Our goal is to provide the best Knowledge Graph for LLM (GraphRAG)..mhtml`
 - The GraphRAG-SDK GitHub repo page (build GenAI apps with GraphRAG at scale). — `FalkorDB_GraphRAG-SDK_ Build fast and accurate GenAI apps with GraphRAG SDK at scale 🌟.mhtml`
 - The FalkorDB `benchmark` GitHub repo page (a tool to benchmark/compare graph databases). — `FalkorDB_benchmark_ A benchmarking tool to evaluate and compare the performance of graph databases with customizable workloads and metrics..mhtml`
@@ -50,15 +58,15 @@ Everything below lives in the relative directory `Documents /Hackathon-resources
 - FalkorDB Cloud sign-in page. — `Sign In.mhtml`
 - FalkorDB Cloud sign-up page. — `Sign up.mhtml`
 
-### Blog posts and articles (saved web pages)
+Blog posts and articles (saved web pages)
 - Benchmarks comparing FalkorDB vs Neo4j graph database performance. — `FalkorDB vs Neo4j_ Graph Database Performance Benchmarks.mhtml`
 - Explainer on what GraphRAG is, its types, limitations, and when to use it. — `What is GraphRAG_ Types, Limitations & When to Use.mhtml`
 - FalkorDB community projects built with GraphRAG and knowledge graphs. — `GraphRAG & Knowledge Graphs Community Projects _ FalkordB.mhtml`
 
-### Link list
+Link list
 - A curated list of the hackathon/FalkorDB links: docs, GitHub repos, YouTube webinar recordings, and blog posts. — `Links.txt`
 
-### Webinar / workshop transcripts (plain text)
+Webinar / workshop transcripts (plain text)
 - Interview on "Context for AI agents" with LJ (founder of CocoIndex) covering context/graph layers for agents and the FalkorDB + CocoIndex connector. — `Transcript.txt`
 - "Graph & RAG" webinar: building and architecting agentic memory with graphs, plus the open-source QueryWeaver natural-language-to-SQL project. — `Transcript copy 14.txt`
 - "Graph & RAG" 5th installment: guest Yoi (VC) demos knowledge-graph projects VCPedia and Fractal KG and how he builds them. — `Transcript copy 16.txt`
