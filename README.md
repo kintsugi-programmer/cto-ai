@@ -4,7 +4,25 @@ Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered b
 
 ## Beginner guide
 
-A short course for absolute beginners lives inside the resource collection at `Documents /Hackathon-resources /guide/`. Each file reads in 2-3 minutes and includes a diagram. Start at `00-start-here.md`.
+A short course for absolute beginners lives inside the resource collection at `Documents/guide/`. Each file reads in 2-3 minutes and includes a diagram. Start at `00-start-here.md`.
+
+- **Foundations**
+  - `01-graph-databases.md` - nodes, edges, and why connections matter.
+  - `02-falkordb.md` - what FalkorDB is and how it works.
+- **Hands-on basics**
+  - `03-run-falkordb.md` - Docker, Docker Compose, Cloud, and the Browser.
+  - `04-cypher-basics.md` - the query language, from CREATE to MATCH.
+  - `05-python-client.md` - connect, query, and bulk-load from Python.
+  - `06-writing-good-cypher.md` - PROFILE, indexes, and UDFs.
+- **AI concepts**
+  - `07-rag-and-graphrag.md` - embeddings, RAG, and why graphs fix retrieval.
+  - `08-graphrag-sdk.md` - ingest documents and get cited answers.
+- **Agent patterns**
+  - `09-graph-algorithms.md` - PageRank, shortest path, and more as agent tools.
+  - `10-agent-memory.md` - memory across sessions and between agents.
+- **Project work**
+  - `11-hackathon-playbook.md` - tracks, rules, and a build checklist.
+  - `12-resources-map.md` - every saved resource and where it lives.
 
 ## Hackathon resources
 
