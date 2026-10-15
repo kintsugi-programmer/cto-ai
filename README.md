@@ -2,6 +2,10 @@
 
 Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered by FalkorDB), team `cto-ai`.
 
+## Beginner guide
+
+A short course for absolute beginners is in the `guide/` folder. Each file reads in 2-3 minutes. Start at `guide/00-start-here.md`.
+
 ## Hackathon resources
 
 Everything below lives in the relative directory `Documents /Hackathon-resources /`.
