@@ -17,6 +17,14 @@ A **graph database** stores data as **nodes** and **relationships** instead of t
 (alice:User {name: "Alice"})-[:FRIENDS_WITH {since: 1640995200}]->(bob:User {name: "Bob"})
 ```
 
+```mermaid
+graph LR
+    A["Alice (User)"] -->|"FRIENDS_WITH, since: 1640995200"| B["Bob (User)"]
+    B -->|"FRIENDS_WITH, since: 1684108800"| C["Charlie (User)"]
+    A -->|"CREATED, time: 1701388800"| P1["Post: Hello World!"]
+    B -->|"CREATED, time: 1701475200"| P2["Post: Graph Databases are awesome!"]
+```
+
 ## Why not just use SQL?
 
 - **Connection questions are natural in graphs**: "Which accounts are linked to this flagged transaction?" or "What breaks if this service goes down?"

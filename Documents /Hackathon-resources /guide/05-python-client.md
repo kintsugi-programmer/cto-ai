@@ -22,6 +22,21 @@ graph = client.select_graph("social")
 
 ## Create and query
 
+```mermaid
+sequenceDiagram
+    participant App as Python app
+    participant Client as falkordb client
+    participant DB as FalkorDB :6379
+    App->>Client: FalkorDB(host, port)
+    Client->>DB: connect
+    App->>Client: graph.query(CREATE ...)
+    Client->>DB: Cypher
+    DB-->>Client: result
+    App->>Client: graph.ro_query(MATCH ...)
+    Client->>DB: read-only Cypher
+    DB-->>Client: result_set
+```
+
 ```python
 create_query = """
 CREATE (alice:User {id: 1, name: "Alice", email: "alice@example.com"})

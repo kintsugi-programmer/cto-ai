@@ -15,6 +15,13 @@ Everything you need to comply with and aim at winning: **Graph Hacks: Context fo
 
 ## Tracks and prizes
 
+```mermaid
+graph TD
+    H["FalkorDB = the agent's context layer"] --> T1["Track 1: Act on connected data - iPhone 18 Pro"]
+    H --> T2["Track 2: Memory and coordination - PS5 with GTA VI"]
+    H --> T3["Track 3: Company brain - M6 Mac Mini"]
+```
+
 - **Track 01 - Agents That Act on Connected Data**: the graph drives decisions and actions (fraud investigation, security triage, codebase work).
   - Focus: multi-hop reasoning, graph queries and algorithms as agent tools, tool selection through MCP, actions based on what the graph shows, explainable results.
   - Prize: iPhone 18 Pro.
@@ -35,6 +42,11 @@ Everything you need to comply with and aim at winning: **Graph Hacks: Context fo
 - **Submissions open**: Oct 17, 2026, 01:03. You cannot change your team after submitting.
 - **No graph database experience needed**, and the getting started guide plus kickoff session cover the basics.
 - Use any language, framework, frontend, and deployment platform.
+
+```mermaid
+flowchart LR
+    O["Oct 15, 12:01 AM IST: event starts"] --> S["Oct 17, 01:03: submissions open"] --> E["Oct 18, 11:59 PM IST: submissions close"]
+```
 
 ## Rules to respect
 

@@ -20,6 +20,14 @@ LIMIT 10
 
 ## The algorithm catalog
 
+```mermaid
+graph LR
+    A["CALL algo.*"] --> P["Pathfinding: BFS, SPpath, A*, SSpath, MSF"]
+    A --> C["Centrality: PageRank, Betweenness, Harmonic"]
+    A --> D["Communities: WCC, CDLP"]
+    A --> N["Flow: MaxFlow"]
+```
+
 - **Pathfinding**
   - **BFS** - breadth-first search from a source node, with optional target or max depth.
   - **SPpath** - shortest paths between a source and one or more destinations.
@@ -45,6 +53,13 @@ LIMIT 10
   - **During**: find the path the malware took from the entry machine to the file servers.
   - **After**: rank which machines and users were most exposed.
 - This is exactly the "what breaks if this service goes down?" reasoning agents need.
+
+```mermaid
+graph LR
+    E["Entry: phishing email"] --> W1["Workstation 1"] --> FS["File server"]
+    W1 --> W2["Workstation 2"] --> DB["Database server"]
+    W2 --> FS
+```
 
 ## Where to use them in the hackathon
 

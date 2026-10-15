@@ -28,6 +28,17 @@ docker run -p 6379:6379 -p 3000:3000 -it \
 
 ## The three Docker images
 
+```mermaid
+flowchart TD
+    N["Need FalkorDB"] --> C{"Local or Cloud?"}
+    C -->|"Docker"| D["falkordb/falkordb, ports 6379 and 3000"]
+    C -->|"Cloud"| CL["app.falkordb.cloud"]
+    CL --> T1["Free tier"]
+    CL --> T2["Startup"]
+    CL --> T3["Pro"]
+    CL --> T4["Enterprise"]
+```
+
 - **falkordb/falkordb** - server plus Browser. Use it for development and exploration (ports 6379, 3000).
 - **falkordb/falkordb-server** - server only. Lighter; use it for production (port 6379).
 - **falkordb/falkordb-browser** - Browser only. Needs `FALKORDB_URL` pointing at a server (port 3000).

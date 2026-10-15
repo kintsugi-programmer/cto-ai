@@ -2,6 +2,12 @@
 
 The **GraphRAG SDK** is FalkorDB's official framework for building GraphRAG apps. It takes you from raw documents to cited answers in under 5 minutes, and it is designed to reduce LLM hallucinations.
 
+```mermaid
+flowchart LR
+    I["ingest(): text or PDF"] --> X["Extract entities and relations"] --> F["finalize(): dedup, embeddings, indexes"] --> C["completion(): retrieve and generate"] --> A["Answer with retrieval trail"]
+    U["apply_changes(): added / modified / deleted"] -.-> F
+```
+
 ## Install and start
 
 ```bash

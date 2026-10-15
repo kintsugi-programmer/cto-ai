@@ -4,6 +4,13 @@
 
 ## The shape of a query
 
+```mermaid
+flowchart LR
+    P["Pattern: nodes and arrows in the query"] --> M["MATCH finds matching paths"]
+    M --> W["WHERE / WITH filter and route rows"]
+    W --> R["RETURN projects the columns you asked for"]
+```
+
 - A query is one or more **clauses** run in order.
 - Patterns use ASCII art: `(node)` for nodes and `-[:REL]->` for relationships.
 

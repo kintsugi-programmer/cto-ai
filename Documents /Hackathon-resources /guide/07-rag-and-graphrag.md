@@ -26,6 +26,18 @@
 - **Scale**: a 2026 industry analysis found **72% to 80% of enterprise RAG implementations fail to reach production**.
 - **Root causes**: inaccurate retrieval, limited context understanding, hallucination, and the cost of large vector stores.
 
+- The two pipelines side by side:
+
+```mermaid
+flowchart TB
+    subgraph Naive["Naive RAG"]
+        Q1["Question"] --> V1["Vector search"] --> C1["Similar chunks"] --> L1["LLM"] --> A1["Answer"]
+    end
+    subgraph GR["GraphRAG"]
+        Q2["Question"] --> E2["Match entities in the graph"] --> T2["Traverse relationships"] --> C2["Connected, traceable evidence"] --> L2["LLM"] --> A2["Answer with sources"]
+    end
+```
+
 ## What GraphRAG is
 
 - **Definition**: a retrieval-augmented generation approach that combines **knowledge graphs** with LLMs.

@@ -20,6 +20,16 @@ Agents are only as good as the context they work with. This file covers the hack
 - Traversals are fast enough to run **on every step of the agent loop**, not only at session start.
 - **Multi-tenancy** keeps memories isolated: one instance, one graph per user or tenant, no separate deployments.
 
+```mermaid
+sequenceDiagram
+    participant Agent
+    participant G as FalkorDB graph
+    Agent->>G: read memory (episodes, facts, profile)
+    G-->>Agent: context for this step
+    Agent->>Agent: reason and act
+    Agent->>G: write episode, outcome, embedding
+```
+
 ## A practical pattern (QueryWeaver)
 
 - An open-source demo app converts natural language to SQL, runs the query, and answers in natural language.
@@ -44,6 +54,13 @@ Agents are only as good as the context they work with. This file covers the hack
 - FalkorDB has a connector for it.
 
 ## Multi-agent coordination
+
+```mermaid
+graph TD
+    A1["Agent 1: planner"] -->|"writes plan and state"| G[("Shared knowledge graph")]
+    A2["Agent 2: worker"] -->|"reads plan, writes result"| G
+    A3["Agent 3: reviewer"] -->|"reads result, writes verdict"| G
+```
 
 - **Shared state**: agents read and write the same graph; a handoff is just a relationship.
 - **Concurrency**: FalkorDB handles high-concurrency reads and writes, so parallel agents are fine.

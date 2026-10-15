@@ -14,6 +14,13 @@
 
 ## How it works: the one big idea
 
+```mermaid
+flowchart LR
+    Q["Agent sends an OpenCypher query"] --> C["FalkorDB translates it to linear algebra"]
+    C --> M["GraphBLAS runs sparse matrix operations"]
+    M --> G[("Graphs stay compact: one per user or tenant")]
+```
+
 - FalkorDB stores each graph as a **sparse adjacency matrix**, a compact grid of "who connects to whom".
 - Queries are translated into **linear algebra** instead of row-by-row lookups.
 - It is the first queryable property graph database to use sparse matrices, powered by **GraphBLAS** underneath.

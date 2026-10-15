@@ -8,6 +8,17 @@ Fast queries matter when an agent runs against the graph on every step. Three th
 - **PROFILE** runs the query and reports, per operation, how many records it produced and how much time it spent.
 - Several different plans can produce the same result with very different performance. Read the plan, then fix the slowest step.
 
+```mermaid
+flowchart LR
+    Q["Query"] --> P["EXPLAIN / PROFILE"]
+    P --> B{"Slowest step?"}
+    B -->|"Cartesian product or node scan"| W["Bind both endpoints with WITH"]
+    B -->|"Filter on a property"| I["Create an index"]
+    W --> P
+    I --> P
+    B -->|"Plan is good"| D["Done"]
+```
+
 ## A worked example (with numbers)
 
 - Scenario: find flights from Salt Lake to Tampa in a flight graph.

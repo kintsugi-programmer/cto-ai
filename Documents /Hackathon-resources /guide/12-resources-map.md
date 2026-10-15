@@ -1,12 +1,22 @@
 # Resources Map
 
-Every saved resource behind this guide lives in a single folder:
+Every saved resource behind this guide lives in a single folder. This guide is the `guide/` subfolder inside it:
 
 ```
 Documents /Hackathon-resources /
 ```
 
 - Both folder names end with a **trailing space**. Copy paths carefully.
+
+```mermaid
+graph TD
+    R[("Documents / Hackathon-resources /")] --> GR["guide/: this 13-file course"]
+    R --> DOC["FalkorDB docs: 8 saved pages"]
+    R --> REP["Repos and services: 6 saved pages"]
+    R --> B["Blogs: 3 saved pages"]
+    R --> EV["Event page: WeMakeDevs"]
+    R --> TX["Links.txt + 19 transcripts"]
+```
 
 ## What to open when you are stuck
 

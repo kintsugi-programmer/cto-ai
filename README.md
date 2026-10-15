@@ -4,7 +4,7 @@ Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered b
 
 ## Beginner guide
 
-A short course for absolute beginners is in the `guide/` folder. Each file reads in 2-3 minutes. Start at `guide/00-start-here.md`.
+A short course for absolute beginners lives inside the resource collection at `Documents /Hackathon-resources /guide/`. Each file reads in 2-3 minutes and includes a diagram. Start at `00-start-here.md`.
 
 ## Hackathon resources
 

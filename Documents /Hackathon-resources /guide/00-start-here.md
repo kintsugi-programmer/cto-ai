@@ -13,6 +13,14 @@ This folder is a short course on **graph databases** and **FalkorDB**, the datab
 
 ## The reading order
 
+```mermaid
+flowchart LR
+    F["Foundations: graphs and FalkorDB"] --> H["Hands-on: run, query, code"]
+    H --> A["AI: RAG and GraphRAG"]
+    A --> M["Agents: algorithms and memory"]
+    M --> P["Project: playbook and resources"]
+```
+
 - **Foundations**
   - `01-graph-databases.md` - nodes, edges, and why connections matter.
   - `02-falkordb.md` - what FalkorDB is and how it works.
@@ -35,5 +43,5 @@ This folder is a short course on **graph databases** and **FalkorDB**, the datab
 
 - **Time**: 2-3 minutes per file. Skim the bullets on a second pass.
 - **Method**: run every command in a code block. Learning happens in the terminal.
-- **Detail**: the raw docs, transcripts, and links behind this guide live in `Documents /Hackathon-resources /`.
+- **Location**: this guide is the `guide/` folder inside the resource collection at `Documents /Hackathon-resources /`, next to the raw docs, transcripts, and links.
 - **Warning**: that folder name has trailing spaces. Copy paths exactly.
