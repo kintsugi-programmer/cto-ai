@@ -4,18 +4,16 @@ The course and the resources sit together under `Documents/`:
 
 ```
 Documents/
-├── guide/                  this 13-file course
-├── Hackathon-resources /   38 raw files (docs, transcripts, links)
-├── ideas/                  hackathon project ideas
-└── project-notes/          working notes while building
+├── guide/                 this 13-file course
+├── Hackathon-resources/   38 raw files (docs, transcripts, links)
+├── ideas/                 hackathon project ideas
+└── project-notes/         working notes while building
 ```
-
-- The `Hackathon-resources ` folder name ends with a **trailing space**. Copy its path carefully.
 
 ```mermaid
 graph TD
     R[("Documents/")] --> GR["guide/: this 13-file course"]
-    R --> HR[("Hackathon-resources /: 38 raw files")]
+    R --> HR[("Hackathon-resources/: 38 raw files")]
     R --> ID["ideas/: project ideas"]
     R --> PN["project-notes/: working notes"]
     HR --> DOC["FalkorDB docs: 8 saved pages"]

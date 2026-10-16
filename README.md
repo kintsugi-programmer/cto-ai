@@ -37,13 +37,13 @@ A short course for absolute beginners lives inside the resource collection at `D
 
 - `Documents/`
   - `guide/` - the 13-module beginner course (start at `guide/00-start-here.md`).
-  - `Hackathon-resources /` - raw resources: docs, transcripts, links (trailing space in the name).
+  - `Hackathon-resources/` - raw resources: docs, transcripts, links.
   - `ideas/` - hackathon project ideas.
   - `project-notes/` - working notes while building.
 
 ## Hackathon resources
 
-Everything below lives in the relative directory `Documents/Hackathon-resources /` (the name ends with a trailing space - copy paths exactly).
+Everything below lives in the relative directory `Documents/Hackathon-resources/`.
 
 Event page
 - The hackathon landing page for this event (tracks, prizes, schedule, rules, resources, submission form). — `Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
