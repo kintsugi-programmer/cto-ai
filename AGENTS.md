@@ -6,6 +6,7 @@ Docs-only repo for the **Graph Hacks: Context for AI Agents** hackathon (FalkorD
 
 - `Documents/guide/` - 13-module beginner course, ordered `00-start-here.md` to `12-resources-map.md`.
 - `Documents/Hackathon-resources/` - 38 raw resources: 18 saved web pages (`.mhtml`), 19 webinar transcripts (`.txt`), and `Links.txt`.
+- `Documents/Hackathon-resources/automated-notes/` - processed detailed notes, one per resource (38 notes plus a `README.md` index); each links its source file, related notes, and guide modules; the 3 duplicate transcripts are stub notes.
 - `Documents/ideas/`, `Documents/project-notes/` - scratch folders for the maintainer, each with a placeholder `README.md`.
 - Directory names have no trailing spaces. Old commits contain `Documents ` / `Hackathon-resources ` with trailing spaces - do not reuse those names.
 - Resource filenames contain spaces, `&`, and one emoji (🌟). Always quote paths.

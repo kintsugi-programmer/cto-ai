@@ -6,6 +6,7 @@ The course and the resources sit together under `Documents/`:
 Documents/
 ├── guide/                 this 13-file course
 ├── Hackathon-resources/   38 raw files (docs, transcripts, links)
+│   └── automated-notes/   one processed note per resource + index
 ├── ideas/                 hackathon project ideas
 └── project-notes/         working notes while building
 ```
@@ -21,6 +22,7 @@ graph TD
     HR --> B["Blogs: 3 saved pages"]
     HR --> EV["Event page: WeMakeDevs"]
     HR --> TX["Links.txt + 19 transcripts"]
+    HR --> AN["automated-notes/: a note per resource"]
 ```
 
 ## What to open when you are stuck
@@ -35,6 +37,7 @@ graph TD
 - **Cloud** - the sign-in and sign-up pages, plus the four transcript walkthroughs for Free, Startup, Pro, and Enterprise tiers.
 - **Event rules** - `Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml` (tracks, prizes, FAQ).
 - **Deep dives** - the 19 `Transcript*.txt` webinar transcripts.
+- **Processed notes for everything** - `Hackathon-resources/automated-notes/README.md` (one detailed note per resource, each linked to its source).
 - **All links in one place** - `Links.txt`.
 
 ## The full collection at a glance
