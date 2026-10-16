@@ -1,21 +1,28 @@
 # Resources Map
 
-Every saved resource behind this guide lives in a single folder. This guide is the `guide/` subfolder inside it:
+The course and the resources sit together under `Documents/`:
 
 ```
-Documents /Hackathon-resources /
+Documents/
+├── guide/                  this 13-file course
+├── Hackathon-resources /   38 raw files (docs, transcripts, links)
+├── ideas/                  hackathon project ideas
+└── project-notes/          working notes while building
 ```
 
-- Both folder names end with a **trailing space**. Copy paths carefully.
+- The `Hackathon-resources ` folder name ends with a **trailing space**. Copy its path carefully.
 
 ```mermaid
 graph TD
-    R[("Documents / Hackathon-resources /")] --> GR["guide/: this 13-file course"]
-    R --> DOC["FalkorDB docs: 8 saved pages"]
-    R --> REP["Repos and services: 6 saved pages"]
-    R --> B["Blogs: 3 saved pages"]
-    R --> EV["Event page: WeMakeDevs"]
-    R --> TX["Links.txt + 19 transcripts"]
+    R[("Documents/")] --> GR["guide/: this 13-file course"]
+    R --> HR[("Hackathon-resources /: 38 raw files")]
+    R --> ID["ideas/: project ideas"]
+    R --> PN["project-notes/: working notes"]
+    HR --> DOC["FalkorDB docs: 8 saved pages"]
+    HR --> REP["Repos and services: 6 saved pages"]
+    HR --> B["Blogs: 3 saved pages"]
+    HR --> EV["Event page: WeMakeDevs"]
+    HR --> TX["Links.txt + 19 transcripts"]
 ```
 
 ## What to open when you are stuck

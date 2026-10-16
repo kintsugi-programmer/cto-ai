@@ -4,6 +4,7 @@
 <!-- TOC -->
 - [Table Of Contents](#table-of-contents)
 - [Beginner guide](#beginner-guide)
+- [Repository layout](#repository-layout)
 - [Hackathon resources](#hackathon-resources)
 <!-- /TOC -->
 
@@ -32,10 +33,17 @@ A short course for absolute beginners lives inside the resource collection at `D
   - `11-hackathon-playbook.md` - tracks, rules, and a build checklist.
   - `12-resources-map.md` - every saved resource and where it lives.
 
+## Repository layout
+
+- `Documents/`
+  - `guide/` - the 13-module beginner course (start at `guide/00-start-here.md`).
+  - `Hackathon-resources /` - raw resources: docs, transcripts, links (trailing space in the name).
+  - `ideas/` - hackathon project ideas.
+  - `project-notes/` - working notes while building.
+
 ## Hackathon resources
 
-Everything below lives in the relative directory `Documents /Hackathon-resources /`.
-(The folder names have trailing spaces — copy paths exactly as written.)
+Everything below lives in the relative directory `Documents/Hackathon-resources /` (the name ends with a trailing space - copy paths exactly).
 
 Event page
 - The hackathon landing page for this event (tracks, prizes, schedule, rules, resources, submission form). — `Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`

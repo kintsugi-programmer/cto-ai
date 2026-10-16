@@ -43,5 +43,5 @@ flowchart LR
 
 - **Time**: 2-3 minutes per file. Skim the bullets on a second pass.
 - **Method**: run every command in a code block. Learning happens in the terminal.
-- **Location**: this guide is the `guide/` folder inside the resource collection at `Documents /Hackathon-resources /`, next to the raw docs, transcripts, and links.
-- **Warning**: that folder name has trailing spaces. Copy paths exactly.
+- **Location**: this guide is `Documents/guide/`, next to the raw resources in `Documents/Hackathon-resources /` and the working folders `ideas/` and `project-notes/`.
+- **Warning**: the `Hackathon-resources ` folder name ends with a trailing space. Copy its path exactly.
