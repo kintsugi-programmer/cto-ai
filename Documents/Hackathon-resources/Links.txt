@@ -43,3 +43,4 @@ https://www.wemakedevs.org/hackathons/falkordb/submit#submission-section-d14a838
 https://www.wemakedevs.org/hackathons/falkordb/rules,
 https://www.wemakedevs.org/hackathons/falkordb/resources,
 https://www.wemakedevs.org/blogs/how-to-build-an-agent-that-reasons-over-a-graph,
+https://youtu.be/paP7p87Mb50?si=sLhlcM10QRbrybif,

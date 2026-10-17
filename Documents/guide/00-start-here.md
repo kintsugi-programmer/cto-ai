@@ -42,6 +42,7 @@ flowchart LR
 - **Build and ship**
   - `13-agent-tools-and-mcp.md` - a fixed tool catalogue, validation, and MCP.
   - `14-demo-and-submission.md` - judges, demo moves, and the submission pack.
+  - `15-building-from-scratch.md` - a blueprint, division, and systems approach to any build.
 
 ## How to use this guide
 

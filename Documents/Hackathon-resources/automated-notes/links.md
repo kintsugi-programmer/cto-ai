@@ -4,10 +4,11 @@
 
 ## Overview
 
-- `Links.txt` is the collection's curated link list: **45 entries** (with a number of duplicates/repeats) covering the event page, FalkorDB docs, GitHub repos, cloud sign-in/sign-up, blogs, the Docker Hub image, and **16 unique YouTube webinar recordings**.
+- `Links.txt` is the collection's curated link list: **46 entries** (with a number of duplicates/repeats) covering the event page, FalkorDB docs, GitHub repos, cloud sign-in/sign-up, blogs, the Docker Hub image, and **17 unique YouTube recordings**.
 - This note preserves **every entry in the original order**, annotated with what it points to. Source lines end with a trailing comma in the file; the commas are separators and are not reproduced here.
 - Four entries were added in a second capture (Oct 17, 2026): the **submission form**, the **rules**, the **resources page**, and the WeMakeDevs **"How to Build an Agent That Reasons Over a Graph"** blog.
-- Every YouTube video resolves to one of the 16 unique webinar transcripts in this folder — see the mapping table below.
+- One entry was added in a third capture (Oct 18, 2026): the **build-from-scratch video** by Manware.
+- Every YouTube video resolves to a transcript in this folder — 16 FalkorDB webinars plus the general build-from-scratch video; see the mapping table below.
 
 ## Links as recorded (original order)
 
@@ -58,15 +59,16 @@
 | 43 | https://www.wemakedevs.org/hackathons/falkordb/rules | Event rules — the full 18 | [event-rules.md](event-rules.md) |
 | 44 | https://www.wemakedevs.org/hackathons/falkordb/resources | Event resources page — start here / setup / querying / examples / videos | [event-resources.md](event-resources.md) |
 | 45 | https://www.wemakedevs.org/blogs/how-to-build-an-agent-that-reasons-over-a-graph | WeMakeDevs blog: How to Build an Agent That Reasons Over a Graph (Blast Radius tutorial) | [blog-how-to-build-an-agent.md](blog-how-to-build-an-agent.md) |
+| 46 | https://youtu.be/paP7p87Mb50?si=sLhlcM10QRbrybif | Video: *How to Build a Project From Scratch When You Don't Know Where to Start* (Manware) | [transcript-build-from-scratch.md](transcript-build-from-scratch.md) |
 
 ## Duplicates and repeats in the list
 
 - #19 repeats #18 (Cloud Free tier video), #31 repeats #30 (Snowflake video), #33 repeats #13 (cybersecurity video), #41 repeats #14 (Cypher video) — each only differs by the YouTube `si` share parameter.
 - #21 repeats #10 (community projects), #26 repeats #8 (client libraries), #27 repeats #2 (docs home).
 
-## Video → transcript mapping (16 unique recordings)
+## Video → transcript mapping (17 unique recordings)
 
-Video titles were resolved from the public YouTube oEmbed endpoint; each maps to exactly one unique transcript in this folder (the collection contains 19 transcript files because three are exact duplicates of others).
+Video titles were resolved from the public YouTube oEmbed endpoint; each maps to exactly one transcript in this folder (the collection contains 20 transcript files because three are exact duplicates of others).
 
 | YouTube ID | Title | Transcript note |
 |------------|-------|-----------------|
@@ -86,6 +88,7 @@ Video titles were resolved from the public YouTube oEmbed endpoint; each maps to
 | `F4hwuLlISP4` | How to Build a Knowledge Graph [Ft. Graphiti] | [transcript-graphiti-zep.md](transcript-graphiti-zep.md) |
 | `QGUUgXXhWeE` | How to Use a Knowledge Graph Ft Yohei Nakajima | [transcript-vcpedia-fractal-kg.md](transcript-vcpedia-fractal-kg.md) |
 | `LbeA0-xy1f8` | How to Run 10,000+ Graphs with 100,000+ Ops/Sec — FalkorDB Multigraph Architecture Explained | [transcript-cluster-scale-out.md](transcript-cluster-scale-out.md) |
+| `paP7p87Mb50` | How to Build a Project From Scratch When You Don't Know Where to Start | [transcript-build-from-scratch.md](transcript-build-from-scratch.md) |
 
 ## Related notes
 

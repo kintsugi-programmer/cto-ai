@@ -1,11 +1,11 @@
 # Automated notes
 
-Processed, detailed notes for **every raw resource** in `Documents/Hackathon-resources/` — one note per resource (42 notes total, listed in this index).
+Processed, detailed notes for **every raw resource** in `Documents/Hackathon-resources/` — one note per resource (43 notes total, listed in this index).
 
 - **No information loss**: each note keeps every fact, number, name, version, step, table row, code snippet, and Q&A answer from its source. Only page chrome (menus, cookie banners, "Copy page", GitHub UI chrome) and conversational filler are dropped.
 - **Relevant**: every note ends with a "Hackathon relevance" section tying the content to the three tracks (connected data, agent memory and coordination, company brain).
 - **Linked**: every note starts with its **source file** (the exact `.mhtml` / `.txt` in the folder above) and ends with related notes and, where useful, guide modules in `Documents/guide/`.
-- The 19 transcript files include three exact duplicate pairs; the duplicates have short stub notes that point to the primary note (verified by `md5`).
+- The 20 transcript files include three exact duplicate pairs; the duplicates have short stub notes that point to the primary note (verified by `md5`).
 - All notes were generated from the locally saved sources only (saved Oct 16-17, 2026). Where a source's original URL is known it appears in the note header.
 
 ## Reading paths
@@ -16,7 +16,7 @@ Processed, detailed notes for **every raw resource** in `Documents/Hackathon-res
 - **Agent memory** — [transcript-graphiti-zep](transcript-graphiti-zep.md) → [transcript-agentic-memory-queryweaver](transcript-agentic-memory-queryweaver.md) → [transcript-cocoindex](transcript-cocoindex.md) → [transcript-vcpedia-fractal-kg](transcript-vcpedia-fractal-kg.md) → [guide: agent memory](../../guide/10-agent-memory.md)
 - **Algorithms and security** — [docs-graph-algorithms](docs-graph-algorithms.md) → [transcript-cyber-security](transcript-cyber-security.md) → [transcript-udf-farm-to-table](transcript-udf-farm-to-table.md) → [guide: graph algorithms](../../guide/09-graph-algorithms.md)
 - **Scale and operations** — [transcript-cluster-scale-out](transcript-cluster-scale-out.md) → [transcript-falkordb-ama](transcript-falkordb-ama.md) → the four Cloud tier notes below
-- **Full build walkthrough** — [blog-how-to-build-an-agent](blog-how-to-build-an-agent.md) (complete demo app tutorial) → [event-resources](event-resources.md)
+- **Full build walkthrough** — [blog-how-to-build-an-agent](blog-how-to-build-an-agent.md) (complete demo app tutorial) → [transcript-build-from-scratch](transcript-build-from-scratch.md) (idea-to-app build process) → [event-resources](event-resources.md)
 - **Event and submission** — [event-graph-hacks](event-graph-hacks.md) → [event-rules](event-rules.md) → [event-submit](event-submit.md) → [guide: hackathon playbook](../../guide/11-hackathon-playbook.md)
 
 ## FalkorDB documentation pages (8 notes)
@@ -56,7 +56,7 @@ Processed, detailed notes for **every raw resource** in `Documents/Hackathon-res
 | [event-resources.md](event-resources.md) | [Resources _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Resources%20_%20Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | Curated build list: start here / setup / querying / examples / videos, each mapped to a note |
 | [event-submit.md](event-submit.md) | [Submit a project _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Submit%20a%20project%20_%20Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | Submission form: 8 questions, required fields, repo + demo video + FalkorDB write-up + blog link |
 
-## Webinar transcripts (19 notes)
+## Webinar transcripts (20 notes)
 
 | Note | Source | Covers |
 |------|--------|--------|
@@ -76,6 +76,7 @@ Processed, detailed notes for **every raw resource** in `Documents/Hackathon-res
 | [transcript-cloud-startup.md](transcript-cloud-startup.md) | [Transcript copy 9.txt](../Transcript%20copy%209.txt) | Cloud Startup tier setup (TLS, persistence, memory) |
 | [transcript-cloud-pro.md](transcript-cloud-pro.md) | [Transcript copy 8.txt](../Transcript%20copy%208.txt) | Cloud Pro tier setup (replication/cluster, zones, replicas) |
 | [transcript-cloud-enterprise.md](transcript-cloud-enterprise.md) | [Transcript copy 7.txt](../Transcript%20copy%207.txt) | Cloud Enterprise tier setup (public/private network, endpoints, audit logs) |
+| [transcript-build-from-scratch.md](transcript-build-from-scratch.md) | [Transcript copy 19.txt](../Transcript%20copy%2019.txt) | Manware's idea-to-app build: blueprint, division, systems triage, and a full Next.js + Neon build story |
 | [transcript-efficient-cypher-copy-6-dup.md](transcript-efficient-cypher-copy-6-dup.md) | [Transcript copy 6.txt](../Transcript%20copy%206.txt) | Exact duplicate of `Transcript copy 18.txt` → points to the Cypher note |
 | [transcript-cyber-security-copy-5-dup.md](transcript-cyber-security-copy-5-dup.md) | [Transcript copy 5.txt](../Transcript%20copy%205.txt) | Exact duplicate of `Transcript copy 2.txt` → points to the cybersecurity note |
 | [transcript-snowflake-app-copy-4-dup.md](transcript-snowflake-app-copy-4-dup.md) | [Transcript copy 4.txt](../Transcript%20copy%204.txt) | Exact duplicate of `Transcript copy.txt` → points to the Snowflake note |

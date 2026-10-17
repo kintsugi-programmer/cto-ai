@@ -35,11 +35,12 @@ A short course for absolute beginners lives inside the resource collection at `D
 - **Build and ship**
   - `13-agent-tools-and-mcp.md` - a fixed tool catalogue, argument checks, and MCP.
   - `14-demo-and-submission.md` - judges, demo moves, and the submission pack.
+  - `15-building-from-scratch.md` - a blueprint, division, and systems approach to any build.
 
 ## Repository layout
 
 - `Documents/`
-  - `guide/` - the 15-module beginner course (start at `guide/00-start-here.md`).
+  - `guide/` - the 16-module beginner course (start at `guide/00-start-here.md`).
   - `Hackathon-resources/` - raw resources (docs, transcripts, links) plus `automated-notes/`, one processed note per resource.
   - `ideas/` - hackathon project ideas.
   - `project-notes/` - working notes while building.
@@ -83,7 +84,7 @@ Blog posts and articles (saved web pages)
 Link list
 - A curated list of the hackathon/FalkorDB links: docs, GitHub repos, YouTube webinar recordings, and blog posts. — `Links.txt`
 
-Webinar / workshop transcripts (plain text)
+Webinar and video transcripts (plain text)
 - Interview on "Context for AI agents" with LJ (founder of CocoIndex) covering context/graph layers for agents and the FalkorDB + CocoIndex connector. — `Transcript.txt`
 - "Graph & RAG" webinar: building and architecting agentic memory with graphs, plus the open-source QueryWeaver natural-language-to-SQL project. — `Transcript copy 14.txt`
 - "Graph & RAG" 5th installment: guest Yoi (VC) demos knowledge-graph projects VCPedia and Fractal KG and how he builds them. — `Transcript copy 16.txt`
@@ -103,3 +104,4 @@ Webinar / workshop transcripts (plain text)
 - Walkthrough of setting up a FalkorDB Cloud Enterprise instance. — `Transcript copy 7.txt`
 - Talk on the FalkorDB-native Snowflake app (graph analytics in Snowflake, zero-ETL, flight-path demo). — `Transcript copy.txt`
 - Duplicate of the FalkorDB-native Snowflake app talk transcript. — `Transcript copy 4.txt`
+- A developer's on-camera build of a full-stack app from scratch (blueprint, division, systems, problem triage) with all the real failures left in. — `Transcript copy 19.txt`
