@@ -47,8 +47,11 @@ Everything below lives in the relative directory `Documents/Hackathon-resources/
 
 Processed, linked notes for every item below live in `Documents/Hackathon-resources/automated-notes/` - start at its `README.md`.
 
-Event page
+Event pages (saved web pages)
 - The hackathon landing page for this event (tracks, prizes, schedule, rules, resources, submission form). — `Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
+- The event Rules page - the full 18 rules, including the graph removal test, the six-item submission pack, and the AI-assistant disclosure requirement. — `Rules _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
+- The event Resources page - the organisers' curated build list (start here, setup, querying and data, examples, videos). — `Resources _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
+- The project submission form - the 8 questions, required fields, and what the demo video and repository entries expect. — `Submit a project _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml`
 
 FalkorDB official documentation (saved web pages)
 - FalkorDB documentation home — what the database is and how the docs are organized. — `FalkorDB Documentation _ Graph Database for GraphRAG & GenAI - FalkorDB Docs.mhtml`
@@ -72,6 +75,7 @@ Blog posts and articles (saved web pages)
 - Benchmarks comparing FalkorDB vs Neo4j graph database performance. — `FalkorDB vs Neo4j_ Graph Database Performance Benchmarks.mhtml`
 - Explainer on what GraphRAG is, its types, limitations, and when to use it. — `What is GraphRAG_ Types, Limitations & When to Use.mhtml`
 - FalkorDB community projects built with GraphRAG and knowledge graphs. — `GraphRAG & Knowledge Graphs Community Projects _ FalkordB.mhtml`
+- WeMakeDevs tutorial: how to build an agent that reasons over a graph, with a complete on-call demo app (Blast Radius), Cypher queries, tool catalogue, and judging advice. — `How to Build an Agent That Reasons Over a Graph _ WeMakeDevs.mhtml`
 
 Link list
 - A curated list of the hackathon/FalkorDB links: docs, GitHub repos, YouTube webinar recordings, and blog posts. — `Links.txt`

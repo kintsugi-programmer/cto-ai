@@ -4,8 +4,9 @@
 
 ## Overview
 
-- `Links.txt` is the collection's curated link list: **41 entries** (with a number of duplicates/repeats) covering the event page, FalkorDB docs, GitHub repos, cloud sign-in/sign-up, blogs, the Docker Hub image, and **16 unique YouTube webinar recordings**.
+- `Links.txt` is the collection's curated link list: **45 entries** (with a number of duplicates/repeats) covering the event page, FalkorDB docs, GitHub repos, cloud sign-in/sign-up, blogs, the Docker Hub image, and **16 unique YouTube webinar recordings**.
 - This note preserves **every entry in the original order**, annotated with what it points to. Source lines end with a trailing comma in the file; the commas are separators and are not reproduced here.
+- Four entries were added in a second capture (Oct 17, 2026): the **submission form**, the **rules**, the **resources page**, and the WeMakeDevs **"How to Build an Agent That Reasons Over a Graph"** blog.
 - Every YouTube video resolves to one of the 16 unique webinar transcripts in this folder — see the mapping table below.
 
 ## Links as recorded (original order)
@@ -53,6 +54,10 @@
 | 39 | https://youtu.be/QGUUgXXhWeE?si=VfTr_oiFnAwgMbhp | Video: *How to Use a Knowledge Graph Ft Yohei Nakajima* | [transcript-vcpedia-fractal-kg.md](transcript-vcpedia-fractal-kg.md) |
 | 40 | https://youtu.be/LbeA0-xy1f8?si=AW3Ob1UcA3hNe9WV | Video: *How to Run 10,000+ Graphs with 100,000+ Ops/Sec — FalkorDB Multigraph Architecture Explained* | [transcript-cluster-scale-out.md](transcript-cluster-scale-out.md) |
 | 41 | https://youtu.be/emUQmEitSGY?si=5YPzmx3Rt-23l4Q_ | Same video as #14, different share parameter | [transcript-efficient-cypher.md](transcript-efficient-cypher.md) |
+| 42 | https://www.wemakedevs.org/hackathons/falkordb/submit#submission-section-d14a8389-a21e-4ef0-b840-3f93670e58ff | Event submission form (project details + feedback, 8 questions) | [event-submit.md](event-submit.md) |
+| 43 | https://www.wemakedevs.org/hackathons/falkordb/rules | Event rules — the full 18 | [event-rules.md](event-rules.md) |
+| 44 | https://www.wemakedevs.org/hackathons/falkordb/resources | Event resources page — start here / setup / querying / examples / videos | [event-resources.md](event-resources.md) |
+| 45 | https://www.wemakedevs.org/blogs/how-to-build-an-agent-that-reasons-over-a-graph | WeMakeDevs blog: How to Build an Agent That Reasons Over a Graph (Blast Radius tutorial) | [blog-how-to-build-an-agent.md](blog-how-to-build-an-agent.md) |
 
 ## Duplicates and repeats in the list
 
@@ -85,6 +90,10 @@ Video titles were resolved from the public YouTube oEmbed endpoint; each maps to
 ## Related notes
 
 - [Event page — Graph Hacks rules, tracks, prizes](event-graph-hacks.md)
+- [Event rules — the full 18](event-rules.md)
+- [Event submission form](event-submit.md)
+- [Event resources page](event-resources.md)
+- [WeMakeDevs agent-building tutorial](blog-how-to-build-an-agent.md)
 - [Docs home — the entry point for all documentation pages](docs-home.md)
 - [Index of all automated notes](README.md)
 - [Guide: resources map](../../guide/12-resources-map.md) — where every raw resource lives

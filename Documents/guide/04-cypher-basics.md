@@ -32,6 +32,12 @@ RETURN friend.name AS Friend
 - **WITH** - pass results between parts of a query.
 - **UNWIND** - turn a list into rows.
 - **FOREACH / CALL {} / UNION** - loops, subqueries, and combined results.
+- **Variable-length patterns** - `-[:REL*1..3]->` walks one to three hops; `nodes(path)` returns the route walked.
+
+```cypher
+MATCH path = (a:User {name: 'Alice'})-[:FRIENDS_WITH*1..2]->(b:User)
+RETURN b.name AS reachable, [n IN nodes(path) | n.name] AS route
+```
 
 ## Model and load a small graph
 

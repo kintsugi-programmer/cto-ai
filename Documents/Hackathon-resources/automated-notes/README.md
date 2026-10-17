@@ -1,12 +1,12 @@
 # Automated notes
 
-Processed, detailed notes for **every raw resource** in `Documents/Hackathon-resources/` — one note per resource (38 notes total, listed in this index).
+Processed, detailed notes for **every raw resource** in `Documents/Hackathon-resources/` — one note per resource (42 notes total, listed in this index).
 
 - **No information loss**: each note keeps every fact, number, name, version, step, table row, code snippet, and Q&A answer from its source. Only page chrome (menus, cookie banners, "Copy page", GitHub UI chrome) and conversational filler are dropped.
 - **Relevant**: every note ends with a "Hackathon relevance" section tying the content to the three tracks (connected data, agent memory and coordination, company brain).
 - **Linked**: every note starts with its **source file** (the exact `.mhtml` / `.txt` in the folder above) and ends with related notes and, where useful, guide modules in `Documents/guide/`.
 - The 19 transcript files include three exact duplicate pairs; the duplicates have short stub notes that point to the primary note (verified by `md5`).
-- All notes were generated from the locally saved sources only (saved Oct 16, 2026). Where a source's original URL is known it appears in the note header.
+- All notes were generated from the locally saved sources only (saved Oct 16-17, 2026). Where a source's original URL is known it appears in the note header.
 
 ## Reading paths
 
@@ -16,7 +16,8 @@ Processed, detailed notes for **every raw resource** in `Documents/Hackathon-res
 - **Agent memory** — [transcript-graphiti-zep](transcript-graphiti-zep.md) → [transcript-agentic-memory-queryweaver](transcript-agentic-memory-queryweaver.md) → [transcript-cocoindex](transcript-cocoindex.md) → [transcript-vcpedia-fractal-kg](transcript-vcpedia-fractal-kg.md) → [guide: agent memory](../../guide/10-agent-memory.md)
 - **Algorithms and security** — [docs-graph-algorithms](docs-graph-algorithms.md) → [transcript-cyber-security](transcript-cyber-security.md) → [transcript-udf-farm-to-table](transcript-udf-farm-to-table.md) → [guide: graph algorithms](../../guide/09-graph-algorithms.md)
 - **Scale and operations** — [transcript-cluster-scale-out](transcript-cluster-scale-out.md) → [transcript-falkordb-ama](transcript-falkordb-ama.md) → the four Cloud tier notes below
-- **Event and submission** — [event-graph-hacks](event-graph-hacks.md) → [guide: hackathon playbook](../../guide/11-hackathon-playbook.md)
+- **Full build walkthrough** — [blog-how-to-build-an-agent](blog-how-to-build-an-agent.md) (complete demo app tutorial) → [event-resources](event-resources.md)
+- **Event and submission** — [event-graph-hacks](event-graph-hacks.md) → [event-rules](event-rules.md) → [event-submit](event-submit.md) → [guide: hackathon playbook](../../guide/11-hackathon-playbook.md)
 
 ## FalkorDB documentation pages (8 notes)
 
@@ -42,14 +43,18 @@ Processed, detailed notes for **every raw resource** in `Documents/Hackathon-res
 | [cloud-sign-in.md](cloud-sign-in.md) | [Sign In.mhtml](../Sign%20In.mhtml) | Cloud sign-in page as saved: email form, validation, links, cookie notice |
 | [cloud-sign-up.md](cloud-sign-up.md) | [Sign up.mhtml](../Sign%20up.mhtml) | Cloud sign-up page as saved: registration shell and links |
 
-## Blogs and event (4 notes)
+## Blogs and event (8 notes)
 
 | Note | Source | Covers |
 |------|--------|--------|
 | [blog-falkordb-vs-neo4j.md](blog-falkordb-vs-neo4j.md) | [FalkorDB vs Neo4j_ Graph Database Performance Benchmarks.mhtml](../FalkorDB%20vs%20Neo4j_%20Graph%20Database%20Performance%20Benchmarks.mhtml) | p50/p90/p99 benchmark numbers, the 11 templated queries, RAG implications, FAQ |
 | [blog-what-is-graphrag.md](blog-what-is-graphrag.md) | [What is GraphRAG_ Types, Limitations & When to Use.mhtml](../What%20is%20GraphRAG_%20Types%2C%20Limitations%20%26%20When%20to%20Use.mhtml) | RAG foundations, benefits, five GraphRAG varieties, architecture, tools, FAQ, citations |
 | [blog-community-projects.md](blog-community-projects.md) | [GraphRAG & Knowledge Graphs Community Projects _ FalkordB.mhtml](../GraphRAG%20%26%20Knowledge%20Graphs%20Community%20Projects%20_%20FalkordB.mhtml) | Product FAQ answers, testimonials, community project list (BFSI, mental-health QA, code graphs, trip planning) |
+| [blog-how-to-build-an-agent.md](blog-how-to-build-an-agent.md) | [How to Build an Agent That Reasons Over a Graph _ WeMakeDevs.mhtml](../How%20to%20Build%20an%20Agent%20That%20Reasons%20Over%20a%20Graph%20_%20WeMakeDevs.mhtml) | WeMakeDevs tutorial: Blast Radius on-call agent, full graph model, 6-tool catalogue, blast-radius/SPpaths/PageRank queries, memory pattern, answer validation, judging tips |
 | [event-graph-hacks.md](event-graph-hacks.md) | [Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | Event facts, team panel (cto-ai, code 25F934), 3 tracks, prizes, rules, FAQ, sample Cypher |
+| [event-rules.md](event-rules.md) | [Rules _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Rules%20_%20Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | The full 18 rules: removal test, submission pack, AI disclosure, data policy, IP, conduct |
+| [event-resources.md](event-resources.md) | [Resources _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Resources%20_%20Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | Curated build list: start here / setup / querying / examples / videos, each mapped to a note |
+| [event-submit.md](event-submit.md) | [Submit a project _ Graph Hacks_ Context for AI Agents _ WeMakeDevs.mhtml](../Submit%20a%20project%20_%20Graph%20Hacks_%20Context%20for%20AI%20Agents%20_%20WeMakeDevs.mhtml) | Submission form: 8 questions, required fields, repo + demo video + FalkorDB write-up + blog link |
 
 ## Webinar transcripts (19 notes)
 

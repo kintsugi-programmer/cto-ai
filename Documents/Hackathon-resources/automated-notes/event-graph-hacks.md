@@ -138,7 +138,7 @@ LIMIT 5
 - **Dates/times:** Oct 15, 12:01 AM → Oct 18, 11:59 PM GMT+5:30 (IST); submissions close 11:59 PM IST on October 18; submissions open on the panel 17 Oct 2026, 01:03; countdown at capture "Ends in 2 days, 20 hours".
 - **Prize pool:** $20,000 total — 3 track prizes (iPhone 18 Pro; PS5 with GTA VI; M6 Mac Mini) + 2 side prizes (AirPods 5 for best blog post, T-shirt for each member of the top 50 teams).
 - **Team limits:** solo up to 4 people; register once; every member of a winning team gets the prize.
-- **Registration:** 7,345 registered at capture; team code 25F934; user's team cto-ai at 1 of 4 seats.
+- **Registration:** 7,345 registered at capture (a later Oct 17 capture shows **7,671**); team code 25F934; user's team cto-ai at 1 of 4 seats.
 - **Track count:** 3 (Connected Data; Agent Memory and Coordination; Company Brain) — a project may enter one, two, or all three.
 - **FalkorDB facts on the page:** open-source graph database; traversals run on every step of an agent loop; one instance holds thousands of isolated graphs; multigraph topology for one-graph-per-user/tenant; official clients Python, Node.js, Java, Rust, Go, PHP, C#; Docker image `falkordb/falkordb:latest`.
 - **Algorithms advertised as agent tools:** Shortest path, PageRank, Centrality, Connected components, Community detection.
@@ -174,6 +174,10 @@ LIMIT 5
 
 ## Related notes
 
+- [event-rules.md](event-rules.md) — the full 18 rules this page summarizes (removal test, submission pack, AI disclosure).
+- [event-resources.md](event-resources.md) — the event's curated build-resources page.
+- [event-submit.md](event-submit.md) — the actual submission form (8 questions, required fields).
+- [blog-how-to-build-an-agent.md](blog-how-to-build-an-agent.md) — WeMakeDevs' own tutorial for this event's brief.
 - [docs-home.md](docs-home.md) — the "Get started" documentation the FAQ points to for beginners.
 - [cloud-sign-up.md](cloud-sign-up.md) — the FalkorDB Cloud account flow needed to run an instance during the event.
 - [repo-falkordb.md](repo-falkordb.md) — the open-source engine behind the sponsor section (`falkordb/falkordb` Docker image).

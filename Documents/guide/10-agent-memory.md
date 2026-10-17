@@ -39,6 +39,17 @@ sequenceDiagram
 - On new questions, the agent retrieves relevant past queries and facts to inform the next one.
 - Takeaway: decide **what the agent needs to remember** and **how it will store it**, then connect everything.
 
+## A lighter pattern (Blast Radius)
+
+- **Write findings back**: memory is just more nodes - no separate store:
+
+```cypher
+CREATE (f:Finding {text: $text, at: $at, session: $session})-[:ABOUT]->(:Service {name: $name})
+```
+
+- **Read before you reason**: query earlier findings about the same entity first, and return `at` with the text so old and fresh memories keep different weight.
+- **Isolate per tenant**: `db.select_graph(f"ops:{tenant_id}")` gives every user or tenant a graph no other query can reach.
+
 ## Temporal knowledge graphs (Graphiti)
 
 - Graphiti builds **temporal knowledge graphs**: facts carry validity windows, so the system knows what is current and what is outdated.

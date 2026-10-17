@@ -66,6 +66,8 @@ graph LR
 - **Wrap each algorithm as an agent tool**: "find the shortest path", "rank influential nodes", "find communities".
 - **Let the agent choose tools** based on the question, for example through MCP.
 - **Keep results explainable**: algorithm output traces the path behind an answer, which is a stated goal of the event.
+- **Return the path with the result** - `algo.SPpaths` yields `path`; return `[n IN nodes(path) | n.name]` so the route walked is part of the answer, not just the distance.
+- **Seed a weight on every edge** - even `1`; weighted calls read `weightProp`, and you can then make one edge type cost more without touching the query.
 - **Fraud, security, recommendations, and codebase analysis** all start with traversals like these.
 
 Do not treat algorithms as decoration. Pick one that genuinely answers your agent's core question faster or more fairly than a hand-written traversal, and expose it as a tool.

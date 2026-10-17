@@ -52,6 +52,12 @@ CREATE INDEX FOR (a:Airport) ON (a.name)
 - **Give the planner more of the pattern**: more fixed labels and properties means a better plan.
 - **Keep traversals intentional**: every extra hop multiplies work.
 - **Reuse plans for repeated shapes** during an agent run; caching helps at the client level.
+- **Parameterize literals**: treat the query as a reusable template, so validation and plan construction are cached and only the values change.
+- **Alias relationships you care about**: an unreferenced relationship in a pattern only verifies that one exists; when two nodes can connect twice, bind it and use it.
+
+```cypher
+MATCH (a)-[e]->(b) WHERE ID(e) >= 0 RETURN COUNT(b)
+```
 
 ## Extend the engine with UDFs
 
