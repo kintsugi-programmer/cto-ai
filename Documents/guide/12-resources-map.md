@@ -7,7 +7,6 @@ Documents/
 ├── guide/                 this 16-file course
 ├── Hackathon-resources/   43 raw files (docs, transcripts, links)
 │   └── automated-notes/   one processed note per resource + index
-├── ideas/                 hackathon project ideas
 └── project-notes/         working notes while building
 ```
 
@@ -15,7 +14,6 @@ Documents/
 graph TD
     R[("Documents/")] --> GR["guide/: this 16-file course"]
     R --> HR[("Hackathon-resources/: 43 raw files")]
-    R --> ID["ideas/: project ideas"]
     R --> PN["project-notes/: working notes"]
     HR --> DOC["FalkorDB docs: 8 saved pages"]
     HR --> REP["Repos and services: 6 saved pages"]

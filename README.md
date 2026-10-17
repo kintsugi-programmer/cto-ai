@@ -42,8 +42,7 @@ A short course for absolute beginners lives inside the resource collection at `D
 - `Documents/`
   - `guide/` - the 16-module beginner course (start at `guide/00-start-here.md`).
   - `Hackathon-resources/` - raw resources (docs, transcripts, links) plus `automated-notes/`, one processed note per resource.
-  - `ideas/` - hackathon project ideas.
-  - `project-notes/` - working notes while building.
+  - `project-notes/` - working notes while building, starting with the finalized cto-ai product review.
 
 ## Hackathon resources
 
