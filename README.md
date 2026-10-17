@@ -32,11 +32,14 @@ A short course for absolute beginners lives inside the resource collection at `D
 - **Project work**
   - `11-hackathon-playbook.md` - tracks, rules, and a build checklist.
   - `12-resources-map.md` - every saved resource and where it lives.
+- **Build and ship**
+  - `13-agent-tools-and-mcp.md` - a fixed tool catalogue, argument checks, and MCP.
+  - `14-demo-and-submission.md` - judges, demo moves, and the submission pack.
 
 ## Repository layout
 
 - `Documents/`
-  - `guide/` - the 13-module beginner course (start at `guide/00-start-here.md`).
+  - `guide/` - the 15-module beginner course (start at `guide/00-start-here.md`).
   - `Hackathon-resources/` - raw resources (docs, transcripts, links) plus `automated-notes/`, one processed note per resource.
   - `ideas/` - hackathon project ideas.
   - `project-notes/` - working notes while building.

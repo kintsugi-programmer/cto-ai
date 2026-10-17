@@ -4,7 +4,7 @@ The course and the resources sit together under `Documents/`:
 
 ```
 Documents/
-├── guide/                 this 13-file course
+├── guide/                 this 15-file course
 ├── Hackathon-resources/   42 raw files (docs, transcripts, links)
 │   └── automated-notes/   one processed note per resource + index
 ├── ideas/                 hackathon project ideas
@@ -13,7 +13,7 @@ Documents/
 
 ```mermaid
 graph TD
-    R[("Documents/")] --> GR["guide/: this 13-file course"]
+    R[("Documents/")] --> GR["guide/: this 15-file course"]
     R --> HR[("Hackathon-resources/: 42 raw files")]
     R --> ID["ideas/: project ideas"]
     R --> PN["project-notes/: working notes"]
@@ -68,6 +68,6 @@ graph TD
 - **Hands-on files** (`03` to `06`) come from the Docker, Browser, clients, Cypher, and UDF resources plus the performance transcripts.
 - **AI files** (`07`, `08`) come from the GraphRAG blog, the GraphRAG SDK repo, and the SDK deep dive.
 - **Agent files** (`09`, `10`) come from the algorithms docs and the memory and security transcripts.
-- **Project files** (`11`, `12`) come from the WeMakeDevs event pages (main page, Rules, Resources, Submit) and the WeMakeDevs agent tutorial, plus this whole collection.
+- **Project files** (`11` to `14`) come from the WeMakeDevs event pages (main page, Rules, Resources, Submit) and the WeMakeDevs agent tutorial, plus this whole collection.
 
 When in doubt, search the transcripts folder for your topic. Almost every beginner question in this guide has a full workshop hour behind it in the raw resources.

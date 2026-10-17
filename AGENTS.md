@@ -4,7 +4,7 @@ Docs-only repo for the **Graph Hacks: Context for AI Agents** hackathon (FalkorD
 
 ## Layout
 
-- `Documents/guide/` - 13-module beginner course, ordered `00-start-here.md` to `12-resources-map.md`.
+- `Documents/guide/` - 15-module beginner course, ordered `00-start-here.md` to `14-demo-and-submission.md`.
 - `Documents/Hackathon-resources/` - 42 raw resources: 22 saved web pages (`.mhtml`), 19 webinar transcripts (`.txt`), and `Links.txt`.
 - `Documents/Hackathon-resources/automated-notes/` - processed detailed notes, one per resource (42 notes plus a `README.md` index); each links its source file, related notes, and guide modules; the 3 duplicate transcripts are stub notes.
 - `Documents/ideas/`, `Documents/project-notes/` - scratch folders for the maintainer, each with a placeholder `README.md`.

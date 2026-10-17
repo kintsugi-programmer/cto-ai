@@ -17,8 +17,9 @@ This folder is a short course on **graph databases** and **FalkorDB**, the datab
 flowchart LR
     F["Foundations: graphs and FalkorDB"] --> H["Hands-on: run, query, code"]
     H --> A["AI: RAG and GraphRAG"]
-    A --> M["Agents: algorithms and memory"]
+    A --> M["Agents: algorithms, memory, tools"]
     M --> P["Project: playbook and resources"]
+    P --> S["Ship: demo and submit"]
 ```
 
 - **Foundations**
@@ -38,6 +39,9 @@ flowchart LR
 - **Project work**
   - `11-hackathon-playbook.md` - tracks, rules, and a build checklist.
   - `12-resources-map.md` - every saved resource and where it lives.
+- **Build and ship**
+  - `13-agent-tools-and-mcp.md` - a fixed tool catalogue, validation, and MCP.
+  - `14-demo-and-submission.md` - judges, demo moves, and the submission pack.
 
 ## How to use this guide
 
