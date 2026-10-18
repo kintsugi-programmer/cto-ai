@@ -18,6 +18,12 @@ npm run verify        # lint + typecheck + test + build
 node dist/cli.js --help
 ```
 
+If the `ctoai` command goes missing or looks stale after changes, rebuild and re-link:
+
+```bash
+npm run build && npm link
+```
+
 ## Layout
 
 - `src/cli.ts` — command surface (commander).
