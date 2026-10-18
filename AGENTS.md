@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Docs-only repo for the **Graph Hacks: Context for AI Agents** hackathon (FalkorDB). No code, manifests, build, tests, or CI exist here - do not add or hunt for them.
+Repo for the **Graph Hacks: Context for AI Agents** hackathon (FalkorDB) and for **`ctoai`**, the CLI built from this work. Docs live at the root and in `Documents/`; all code, manifests, build, and tests are confined to `cli/` - do not add them anywhere else. There is no CI.
 
 ## Layout
 
@@ -8,6 +8,7 @@ Docs-only repo for the **Graph Hacks: Context for AI Agents** hackathon (FalkorD
 - `Documents/Hackathon-resources/` - 43 raw resources: 22 saved web pages (`.mhtml`), 20 transcripts (`.txt`), and `Links.txt`.
 - `Documents/Hackathon-resources/automated-notes/` - processed detailed notes, one per resource (43 notes plus a `README.md` index); each links its source file, related notes, and guide modules; the 3 duplicate transcripts are stub notes.
 - `Documents/project-notes/` - scratch folder for the maintainer; holds the finalized cto-ai product review (`2026-10-18-cto-ai-product-review.md`) and future working notes.
+- `cli/` - the `ctoai` npm package (TypeScript CLI: source, tests, build). Only this folder may contain code, manifests, or build output.
 - Directory names have no trailing spaces. Old commits contain `Documents ` / `Hackathon-resources ` with trailing spaces - do not reuse those names.
 - Resource filenames contain spaces, `&`, and one emoji (🌟). Always quote paths.
 
@@ -60,4 +61,4 @@ PY
 
 ## Workflow
 
-- Commit and push directly to `main` (`git push origin main`). No branches, PRs, or CI in this repo.
+- Commit and push directly to `main` (`git push origin main`). No branches, PRs, or CI in this repo. For `cli/` changes, run `npm run verify` in `cli/` before committing.

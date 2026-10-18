@@ -3,13 +3,22 @@
 ## Table Of Contents
 <!-- TOC -->
 - [Table Of Contents](#table-of-contents)
+- [The ctoai package](#the-ctoai-package)
 - [Beginner guide](#beginner-guide)
 - [Repository layout](#repository-layout)
 - [Hackathon resources](#hackathon-resources)
 <!-- /TOC -->
 
 
-Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered by FalkorDB), team `cto-ai`.
+Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered by FalkorDB), team `cto-ai`. It also hosts **`ctoai`**, the CLI tool built out of this project — source in `cli/`.
+
+## The ctoai package
+
+`cli/` contains **`ctoai`**, the persistent project brain for any coding agent: file-first, graph-powered, MCP-native. See the product review and implementation roadmap in `Documents/project-notes/`.
+
+- **Status:** `0.0.1` scaffold — full command surface stubbed; schema and store interface defined.
+- **Try it:** `cd cli && npm install && npm run build && node dist/cli.js --help`.
+- **Published as** `ctoai` on npm.
 
 ## Beginner guide
 
@@ -43,6 +52,7 @@ A short course for absolute beginners lives inside the resource collection at `D
   - `guide/` - the 16-module beginner course (start at `guide/00-start-here.md`).
   - `Hackathon-resources/` - raw resources (docs, transcripts, links) plus `automated-notes/`, one processed note per resource.
   - `project-notes/` - working notes while building, starting with the finalized cto-ai product review.
+- `cli/` - the `ctoai` npm package (TypeScript CLI: source, tests, build).
 
 ## Hackathon resources
 

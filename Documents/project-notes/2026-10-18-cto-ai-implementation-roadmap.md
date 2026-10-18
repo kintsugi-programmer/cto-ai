@@ -25,8 +25,8 @@ Everything below runs with zero external services, offline, committed to git. Th
 
 ## 2. Locked technical decisions for this phase
 
-- **Repo split:** the implementation gets its own public repo named `cto-ai`. THIS docs repo stays docs-only (AGENTS.md forbids code here) and remains the planning/submission record.
-- **Package:** single npm package `cto-ai` (binary `cto-ai`), TypeScript strict, ESM, Node ≥ 20. MIT license.
+- **Repo decision (amended at kickoff):** same repo. The implementation lives in `cli/` inside this repo (`kintsugi-programmer/cto-ai`), with code, manifests, build, and tests confined there. (The earlier plan of a separate repo was superseded.)
+- **Package:** single npm package **`ctoai`** (binary `ctoai`), TypeScript strict, ESM, Node ≥ 20. MIT license.
 - **Tooling:** build with `tsup`, tests with `vitest`, lint/format with **Biome** (fast, one tool) — or ESLint + Prettier if preferred; pick one and lock it. CLI framework: **commander** (boring and battle-tested). Interview UX: **@clack/prompts**.
 - **Parsing libraries:** `gray-matter` (frontmatter), `fast-glob`, `ignore` (gitignore semantics), `yaml`. Import scanning starts as a deterministic per-language line scanner (`import … from`, `require(…)`, `from x import y`); a real parser per language is a later upgrade behind the same interface.
 - **Identifiers:** stable, human-readable keys — `file:src/index.ts`, `dir:src`, `note:context-architecture`, `spec:03`, `session:2026-10-18T20-10-a1b2`, `finding:<hash8>`.
@@ -87,11 +87,11 @@ A "session" below = one focused 2–4 hour block. Estimates are for a solo devel
 
 ### Phase 0 — Foundation (1–2 sessions)
 
-**Unit 0.1 — Repo + CLI skeleton**
-- Create the public `cto-ai` repo; `npm init`; TS strict, ESM, tsup, vitest, Biome; `bin: { "cto-ai": "dist/cli.js" }`.
+**Unit 0.1 — CLI skeleton**
+- Create the `cli/` package in this repo; `npm init`; TS strict, ESM, tsup, vitest, Biome; `bin: { "ctoai": "dist/cli.js" }`.
 - Stub every command: `init`, `sync`, `status`, `resume`, `query`, `record`, `export`, `import`, `guards`, `spec`, `mcp`, `connect`.
-- GitHub Actions: lint + test + build on every push.
-- ✅ **Done when:** `node dist/cli.js --help` lists all commands; CI green; `npm pack` produces an installable tarball; version `0.0.1`.
+- CI deferred (this repo commits directly to `main`); run `npm run verify` locally.
+- ✅ **Done when:** `node dist/cli.js --help` lists all commands; local lint/typecheck/test/build pass; `npm pack` produces an installable tarball; version `0.0.1`.
 
 **Unit 0.2 — Core types + store interface**
 - `src/core/schema.ts`: zod schemas for every node/edge; `src/core/store.ts`: `KnowledgeStore` interface.
@@ -175,7 +175,7 @@ A "session" below = one focused 2–4 hour block. Estimates are for a solo devel
 ### Phase 4 — Ship & polish (2–3 sessions)
 
 - **Unit 4.1 — Docs + examples:** README (setup, graph model, every query), `docs/`, three example repos (plain code, six-file adopter, docs corpus).
-- **Unit 4.2 — Publish:** `cto-ai@0.1.0` on npm, changelog, LICENSE (MIT), contribution guide. (Claim the npm name now, before Phase 0 even.)
+- **Unit 4.2 — Publish:** `ctoai@0.1.0` on npm, changelog, LICENSE (MIT), contribution guide. (The `ctoai` name is claimed at kickoff with `0.0.1`.)
 - **Unit 4.3 — Hardening:** perf pass on a medium repo, error messages, `--verbose`, `--offline`, Node version check, telemetry off by default.
 
 ### Optional weekend slice (if a demo is needed before Phase 1 completes)
@@ -184,16 +184,16 @@ Units 0.1 → 1.1 → 1.2 → 1.3 (lite) → 1.4 (five tools) → 1.5, with `res
 
 ## 4. Immediate next actions (this week)
 
-1. Create the public `cto-ai` implementation repo (separate from this docs repo).
-2. Claim the npm name: `npm publish` a 0.0.0 placeholder or reserve via npm support.
-3. Execute Unit 0.1 (skeleton + CI), then Unit 0.2 (schema + store interface).
-4. Freeze the v0 schema doc inside the new repo before writing any scanner code.
+1. Package scaffolding in `cli/` (same repo) — kicked off Oct 18; Unit 0.1 verification completes the scaffold.
+2. Claim the npm name: publish `ctoai@0.0.1`.
+3. Execute Unit 0.2 (schema + store interface), then Unit 1.1 (`init`).
+4. Freeze the v0 schema in `cli/src/core/schema.ts` before writing any scanner code.
 5. Build Units 1.1–1.2 against this docs repo as the first fixture.
 
 ## 5. Working rules (how we build it)
 
 - **Spec-driven, self-hosted where possible:** every unit gets its own spec file before implementation (Goal / Design / Implementation / Dependencies / Verify). Once Unit 1.7 lands, cto-ai manages its own build plan — dogfooding is the primary QA.
-- **One unit per branch/PR** (`feat/NN-name`); the spec's verification checklist gates the merge.
+- **One unit per commit** on `main` (this repo commits directly to `main`); the spec's verification checklist gates the commit. If the package is ever split into its own repo, switch to branches/PRs there.
 - **Bootstrap tracker:** until `.cto-ai/log` exists, keep a hand-written progress file in the new repo (current phase, done, next, open questions); migrate it into cto-ai at the Phase 1 milestone.
 - **Definition of done per unit:** tests pass, `--json` schema stable, docs updated, no orphan TODOs (file issues instead).
 - **Determinism rule:** index outputs are sorted and byte-identical across runs; anything nondeterministic is a bug.
