@@ -182,13 +182,24 @@ A "session" below = one focused 2–4 hour block. Estimates are for a solo devel
 
 Units 0.1 → 1.1 → 1.2 → 1.3 (lite) → 1.4 (five tools) → 1.5, with `resume` from 1.6. Demo corpus: this docs repo. Demo moves: depth-1 vs depth-4 on a real question, one honest "not indexed" answer, and `resume` restoring context in one call.
 
-## 4. Immediate next actions (this week)
+## 4. Status (updated Oct 18, after Phase 1)
 
-1. Package scaffolding in `cli/` (same repo) — kicked off Oct 18; Unit 0.1 verification completes the scaffold.
-2. Claim the npm name: publish `ctoai@0.0.1`.
-3. Execute Unit 0.2 (schema + store interface), then Unit 1.1 (`init`).
-4. Freeze the v0 schema in `cli/src/core/schema.ts` before writing any scanner code.
-5. Build Units 1.1–1.2 against this docs repo as the first fixture.
+All five kickoff actions are done; the npm publish is the only one still open.
+
+1. **Package scaffolding** — done. `cli/` exists in this repo; Unit 0.1 verified.
+2. **npm name** — name claimed in `package.json` (`0.1.0`), **not yet published**. `npm view ctoai` still 404s; publish with `cd cli && npm publish`.
+3. **Units 0.2 and 1.1** — done. Schema and store interface implemented; `init` scaffolds `.cto-ai/` idempotently.
+4. **v0 schema frozen** — done, in `cli/src/core/schema.ts` (15 node types, 11 edge types).
+5. **Units 1.1–1.2 against this docs repo** — done. Full sync on this repo: 158 files → 183 nodes, 553 edges in ~0.2s, with incremental reuse and byte-identical consecutive runs.
+
+**Phase 1 is complete.** Every unit from 1.1 to 1.8 is implemented: scan, incremental index, lite algorithms, the tool catalogue, MCP server over stdio, append-only events with `resume`, the spec workflow, and entry-file/export/import. 121 tests pass under `npm run verify`.
+
+**Not done, by design:**
+
+- **Unit 1.9** (optional local semantic search) — skipped; `context_for` runs lexical-only and labels itself `lite`.
+- **Phase 2** (graph era) — `FalkorStore` and a RESP client are written but **untested against a live FalkorDB**; no server was available in this environment. Treat `connect` and `--backfill` as unverified until run against a real instance.
+- **Phase 3** (guards depth, drift, health history) — `guards` and `check` work off working-tree state; cross-project and historical-trend checks are not built.
+- **Dogfood gate** — `cli/` is not yet self-managed by `ctoai`. That is the next milestone, and the friction found there becomes the issue list.
 
 ## 5. Working rules (how we build it)
 

@@ -18,7 +18,7 @@ Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered b
 
 - **Status:** `0.1.0` — Phase 1 complete. Every command is implemented against the file-system store, with a FalkorDB adapter ready for Phase 2.
 - **Try it:** `cd cli && npm install && npm run build && node dist/cli.js --help`.
-- **Published as** `ctoai` on npm.
+- **npm name:** `ctoai` is claimed in `package.json` but **not yet published** — publish with `cd cli && npm publish` when ready.
 
 ## Beginner guide
 
