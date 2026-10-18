@@ -1,4 +1,4 @@
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 
 import type { HealthReport } from "../index/build";
 import { openProject, requireInitialized } from "../project/open";
@@ -48,7 +48,6 @@ export async function runStatus(options: StatusOptions): Promise<StatusResult> {
 }
 
 async function readHealth(path: string): Promise<HealthReport> {
-  const { readFile } = await import("node:fs/promises");
   try {
     const raw = await readFile(path, "utf8");
     return JSON.parse(raw) as HealthReport;

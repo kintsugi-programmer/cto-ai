@@ -8,7 +8,7 @@ import {
   sortNodes,
 } from "../index/build";
 import { collectGitInfo } from "../index/git";
-import { requireInitialized } from "../project/open";
+import { openProject, requireInitialized } from "../project/open";
 
 export interface SyncOptions {
   root: string;
@@ -37,7 +37,7 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
 
   const git = options.noGit ? undefined : await collectGitInfo(root);
 
-  const { config, events } = await lazyOpen(root);
+  const { config, events } = await openProject(root);
   const eventList = await events.all();
 
   const result = await buildIndex({
@@ -127,12 +127,6 @@ function parseJsonl<T>(raw: string): T[] {
     }
   }
   return out;
-}
-
-/** Lazy open to avoid a circular import with project/open at module load. */
-async function lazyOpen(root: string) {
-  const { openProject } = await import("../project/open");
-  return openProject(root);
 }
 
 export type { HealthReport };

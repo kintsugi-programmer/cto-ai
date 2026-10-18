@@ -1,3 +1,6 @@
+import { readdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { openProject, requireInitialized } from "../project/open";
 import { parseSpec, type SpecUnit, specNext } from "../spec/workflow";
 
@@ -124,7 +127,6 @@ export async function runResume(options: ResumeOptions): Promise<ResumeResult> {
 }
 
 async function readDirNames(dir: string): Promise<string[]> {
-  const { readdir } = await import("node:fs/promises");
   try {
     return (await readdir(dir)).filter((name) => name.endsWith(".md")).sort();
   } catch {
@@ -133,8 +135,6 @@ async function readDirNames(dir: string): Promise<string[]> {
 }
 
 async function readSpecs(dir: string): Promise<SpecUnit[]> {
-  const { readdir, readFile } = await import("node:fs/promises");
-  const { join } = await import("node:path");
   let names: string[] = [];
   try {
     names = (await readdir(dir)).filter((name) => name.endsWith(".md")).sort();

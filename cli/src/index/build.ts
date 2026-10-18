@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 import type { Config } from "../core/config";
@@ -186,12 +186,6 @@ export async function buildIndex(options: BuildOptions): Promise<IndexResult> {
   };
 
   const files = await walkFiles(root, { ignore: config.ignore });
-  const textByPath = new Map<string, ScannedFile>();
-  for (const file of files) {
-    if (file.text) {
-      textByPath.set(file.path, file);
-    }
-  }
   const knownPaths = new Set(files.map((file) => file.path));
 
   const nodes = new Map<string, CtoNode>();
@@ -696,7 +690,6 @@ export function sortEdges(edges: CtoEdge[]): CtoEdge[] {
 }
 
 async function readDirSafe(dir: string): Promise<string[]> {
-  const { readdir } = await import("node:fs/promises");
   try {
     const entries = await readdir(dir);
     return entries.sort();

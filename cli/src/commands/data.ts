@@ -1,7 +1,6 @@
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import { CtoaiError, ErrorCodes } from "../core/errors";
 import type { CtoEdge, CtoNode } from "../core/schema";
 import { openProject, requireInitialized } from "../project/open";
 import { syncEntryFile } from "./init";
@@ -92,11 +91,11 @@ export async function runImport(options: ImportOptions): Promise<ImportResult> {
   requireInitialized(root);
   const paths = ctoPathsOf(root);
 
-  const stat = await import("node:fs/promises").then((fs) => fs.stat(source));
+  const statResult = await stat(source);
   const imported: string[] = [];
   const notes: string[] = [];
 
-  if (stat.isDirectory()) {
+  if (statResult.isDirectory()) {
     const names = (await readdir(source)).filter((name) => name.endsWith(".md")).sort();
     const mapping: Record<string, string> = {
       "prd.md": "project-overview.md",
@@ -218,5 +217,3 @@ function renderSixFile(
     }\n`,
   };
 }
-
-export { CtoaiError, ErrorCodes };

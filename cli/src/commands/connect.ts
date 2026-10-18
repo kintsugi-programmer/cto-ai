@@ -1,7 +1,8 @@
 import { CtoaiError, ErrorCodes } from "../core/errors";
 import type { GraphSnapshot } from "../core/store";
-import { loadConfig, saveConfig } from "../project/open";
-import { parseRedisUrl, RespConnection, runReadOnly } from "../stores/falkor/client";
+import { loadConfig, openProject, saveConfig } from "../project/open";
+import { parseRedisUrl, RespConnection } from "../stores/falkor/client";
+import { FalkorStore } from "../stores/falkor/store";
 
 export interface ConnectOptions {
   root: string;
@@ -121,7 +122,6 @@ async function backfill(
   username: string | undefined,
   password: string | undefined,
 ): Promise<{ ok: boolean; nodeCount: number; edgeCount: number; error?: string }> {
-  const { openProject } = await import("../project/open");
   const project = await openProject(root);
   let snapshot: GraphSnapshot;
   try {
@@ -130,7 +130,6 @@ async function backfill(
     await project.store.close();
   }
 
-  const { FalkorStore } = await import("../stores/falkor/store");
   const target = new FalkorStore({
     url,
     graph,
@@ -151,5 +150,3 @@ async function backfill(
     await target.close();
   }
 }
-
-export { runReadOnly };

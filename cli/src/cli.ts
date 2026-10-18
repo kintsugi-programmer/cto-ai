@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { Command, Option } from "commander";
+import { Command } from "commander";
 import { runConnect } from "./commands/connect";
 import { runExport, runImport } from "./commands/data";
 import { runCheck, runGuards } from "./commands/guards";
@@ -24,7 +24,7 @@ const program = new Command()
   )
   .version(__CTOAI_VERSION__)
   .option("-C, --cwd <dir>", "project directory (default: walk up from here)")
-  .addOption(new Option("--json", "machine-readable output").conflicts("pretty"));
+  .option("--json", "machine-readable output");
 
 function root(): string {
   const cwd = program.opts<{ cwd?: string }>().cwd ?? process.cwd();
