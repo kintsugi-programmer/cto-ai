@@ -16,7 +16,7 @@ Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered b
 
 `cli/` contains **`ctoai`**, the persistent project brain for any coding agent: file-first, graph-powered, MCP-native. See the product review and implementation roadmap in `Documents/project-notes/`.
 
-- **Status:** `0.0.1` scaffold — full command surface stubbed; schema and store interface defined.
+- **Status:** `0.1.0` — Phase 1 complete. Every command is implemented against the file-system store, with a FalkorDB adapter ready for Phase 2.
 - **Try it:** `cd cli && npm install && npm run build && node dist/cli.js --help`.
 - **Published as** `ctoai` on npm.
 

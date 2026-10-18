@@ -1,6 +1,6 @@
 {
   "name": "ctoai",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The persistent project brain for any coding agent - file-first, graph-powered, MCP-native.",
   "type": "module",
   "bin": {
