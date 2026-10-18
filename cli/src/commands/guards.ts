@@ -1,7 +1,11 @@
-import { collectGitInfo } from "../index/git";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+
 import { openProject, requireInitialized } from "../project/open";
 import { matchesGlob } from "../tools/catalog";
 import { type GuardRule, loadGuardsFromContext } from "../tools/resolve";
+
+const exec = promisify(execFile);
 
 export interface GuardsOptions {
   root: string;
@@ -25,11 +29,13 @@ export async function runGuards(options: GuardsOptions): Promise<GuardsResult> {
   const rules = await loadGuardsFromContext(root);
   const applicable = rules.filter((rule) => matchesGlob(path, rule.pattern));
 
-  // Anything else modified in git that trips the same rules is worth flagging:
-  // a change to a protected path usually drags its neighbours along.
-  const git = await collectGitInfo(root, 100);
+  // Anything else dirty in the working tree that trips the same rules is
+  // worth flagging: a change to a protected path usually drags its
+  // neighbours along. This reads `git status`, not commit history - files
+  // touched in old commits are not what the developer is changing now.
+  const dirty = await modifiedPaths(root);
   const alsoModified: string[] = [];
-  for (const modified of git.commit.keys()) {
+  for (const modified of dirty) {
     if (modified === path) {
       continue;
     }
@@ -98,9 +104,6 @@ export async function runCheck(options: CheckOptions): Promise<CheckResult> {
 }
 
 async function modifiedPaths(root: string): Promise<string[]> {
-  const { execFile } = await import("node:child_process");
-  const { promisify } = await import("node:util");
-  const exec = promisify(execFile);
   try {
     // -uall: list every untracked file instead of collapsing a dirty folder
     // into one line, otherwise a violation inside .cto-ai/ hides behind it.

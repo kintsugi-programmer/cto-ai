@@ -124,16 +124,29 @@ describe("why_connected", () => {
     expect(result.path).toEqual(["file:src/cli.ts", "file:src/store.ts", "file:src/util.ts"]);
   });
 
-  it("reports an honest no-path answer", async () => {
-    const isolated = node("file:solo.ts", "solo.ts", { path: "solo.ts" });
+  it("says not-indexed when one endpoint is unknown", async () => {
     const result = await getTool("why_connected").run(ctxWith(), {
       from: "src/cli.ts",
-      to: "solo.ts",
+      to: "file:solo.ts",
       depth: 8,
     });
-    // solo is not connected to cli via any edge within the graph we built.
-    expect(result.outcome === "answered" || result.outcome === "not-indexed").toBe(true);
-    void isolated;
+    expect(result.outcome).toBe("not-indexed");
+    expect(result.answer).toContain("not in the graph");
+    expect(result.path).toEqual([]);
+  });
+
+  it("says found:false when both endpoints exist but nothing connects them", async () => {
+    // docs/readme.md links only to cli.ts; util.ts is reachable from cli.ts,
+    // so cut the chain: ask between two nodes joined by no edge at all.
+    const result = await getTool("why_connected").run(ctxWith(), {
+      from: "file:docs/readme.md",
+      to: "file:src/util.ts",
+      depth: 1,
+    });
+    // readme -> cli -> store -> util needs 3 hops; depth 1 cannot reach it.
+    expect(result.outcome).toBe("answered");
+    expect(result.data.found).toBe(false);
+    expect(result.answer).toContain("No path");
   });
 });
 
@@ -182,6 +195,34 @@ describe("islands and communities", () => {
     expect(result.outcome).toBe("answered");
     const clusters = result.data.clusters as Array<{ members: string[] }>;
     expect(clusters.some((c) => c.members.includes("file:orphan/a.md"))).toBe(true);
+  });
+
+  it("never claims one connected mass when clusters were merely too big", async () => {
+    // An 11-node island exceeds the default maxSize of 10. The old behavior
+    // filtered it out and then reported the graph as fully connected, which
+    // was false; it must instead say clusters exist but were omitted.
+    const bigIsland = Array.from({ length: 11 }, (_, i) =>
+      node(`file:big/${i}.md`, `${i}.md`, { path: `big/${i}.md` }),
+    );
+    const bigEdges = bigIsland
+      .slice(0, -1)
+      .map((n, i) => edge("LINKS_TO", n.id, `file:big/${i + 1}.md`));
+    const ctx = makeToolContext({
+      store: fakeStore([...nodes, ...bigIsland], [...edges, ...bigEdges]),
+      root: "/nonexistent",
+    });
+
+    const result = await getTool("islands").run(ctx, { limit: 10 });
+    expect(result.outcome).toBe("answered");
+    expect(result.answer).not.toContain("one connected mass");
+    expect(result.answer).toContain("larger cluster(s) omitted");
+    expect(result.data.omitted).toBe(1);
+
+    // Raising maxSize surfaces the same cluster.
+    const raised = await getTool("islands").run(ctx, { limit: 10, maxSize: 20 });
+    const raisedClusters = raised.data.clusters as Array<{ members: string[] }>;
+    expect(raisedClusters.some((c) => c.members.includes("file:big/0.md"))).toBe(true);
+    expect(raised.data.omitted).toBe(0);
   });
 
   it("communities partitions every node", async () => {

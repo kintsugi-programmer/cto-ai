@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { CtoaiError, ErrorCodes } from "../core/errors";
-import type { CtoEdge, CtoNode } from "../core/schema";
+import type { CtoNode } from "../core/schema";
 import { blastRadius as runBlastRadius } from "../index/graph";
 import { adjacencyOf, resolveNode, type ToolContext } from "./resolve";
 
@@ -49,6 +49,13 @@ export const TimelineArgs = z.object({
 
 export const IslandsArgs = z.object({
   limit: z.number().int().min(1).max(100).default(10),
+  maxSize: z
+    .number()
+    .int()
+    .min(1)
+    .max(1000)
+    .default(10)
+    .describe("largest cluster treated as an island; bigger ones are reported as omitted"),
 });
 
 export const CommunitiesArgs = z.object({
@@ -400,28 +407,43 @@ const islands: ToolDefinition<typeof IslandsArgs> = {
   async run(ctx, args) {
     const adjacency = await adjacencyOf(ctx);
     const { weaklyConnectedComponents } = ctx.graph;
-    const components = weaklyConnectedComponents(adjacency).filter(
-      (component) => component.length <= 10,
-    );
-    if (components.length === 0) {
+    // `maxSize` normally arrives via the schema default; fall back so a
+    // direct call (tests, future callers) can never filter everything out
+    // with `<= undefined` and silently report "one connected mass".
+    const maxSize = args.maxSize ?? 10;
+    const all = weaklyConnectedComponents(adjacency);
+    const islandsOnly = all.filter((component) => component.length <= maxSize);
+    // Anything bigger is still disconnected - it is just not small enough to
+    // be an island. Reporting it keeps the answer honest.
+    const omitted = all.length - islandsOnly.length;
+
+    if (islandsOnly.length === 0) {
       return {
         tool: "islands",
         outcome: "answered",
-        answer: "No small disconnected clusters; the graph is one connected mass.",
+        answer:
+          omitted === 0
+            ? "No disconnected clusters: the graph is one connected mass."
+            : `No clusters at or under ${maxSize} node(s); ${omitted} larger disconnected cluster(s) exist - raise maxSize to see them.`,
         path: [],
-        data: { clusters: [] },
+        data: { clusters: [], omitted, maxSize },
       };
     }
-    const clusters = components.slice(0, args.limit).map((member) => ({
-      size: member.length,
-      members: member,
-    }));
+    const clusters = islandsOnly
+      .sort((a, b) => a.length - b.length || ((a[0] ?? "") < (b[0] ?? "") ? -1 : 1))
+      .slice(0, args.limit)
+      .map((member) => ({
+        size: member.length,
+        members: member,
+      }));
     return {
       tool: "islands",
       outcome: "answered",
-      answer: `${clusters.length} disconnected cluster(s), largest of size ${clusters[0]?.size ?? 0}.`,
+      answer:
+        `${clusters.length} disconnected cluster(s) of at most ${maxSize} node(s), smallest of size ${clusters[0]?.size ?? 0}` +
+        (omitted > 0 ? `; ${omitted} larger cluster(s) omitted.` : "."),
       path: clusters.flatMap((cluster) => cluster.members).slice(0, 50),
-      data: { clusters },
+      data: { clusters, omitted, maxSize },
     };
   },
 };
@@ -620,5 +642,3 @@ export function globToRegex(pattern: string): RegExp {
   }
   return new RegExp(`^${source}$`);
 }
-
-export type { CtoEdge };
