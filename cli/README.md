@@ -6,9 +6,14 @@ The persistent project brain for any coding agent — file-first, graph-powered,
 
 ## Install
 
+The npm package is **`cto-ai`**; the command it installs is **`ctoai`**.
+
 ```bash
-npx ctoai --help
+npx cto-ai --help        # run without installing
+npm install -g cto-ai    # or install the `ctoai` command
 ```
+
+Both `ctoai` and `cto-ai` work as commands once installed.
 
 ## Quick start
 
@@ -69,7 +74,7 @@ Registers the ten tools above plus `record`, so an agent can read context and wr
 ```json
 {
   "mcpServers": {
-    "ctoai": { "command": "npx", "args": ["ctoai", "mcp"] }
+    "ctoai": { "command": "npx", "args": ["-y", "cto-ai", "mcp"] }
   }
 }
 ```
@@ -87,6 +92,73 @@ Three layers, one source of truth per artifact class. There is no bidirectional 
 Graph v0: 15 node types (`Project`, `Dir`, `File`, `Note`, `Meeting`, `Decision`, `Finding`, `Session`, `Episode`, `Requirement`, `Feature`, `Skill`, `Spec`, `Task`, `Person`) and 11 edge types (`CONTAINS`, `DEPENDS_ON`, `LINKS_TO`, `MENTIONS`, `ABOUT`, `DECIDED_IN`, `LEARNED_IN`, `PART_OF`, `SUPERSEDES`, `IMPLEMENTS`, `TOUCHED`).
 
 Decisions are superseded, never deleted. A later decision about the same target gets a `SUPERSEDES` edge to the earlier one, so `recall` can show history instead of the latest value alone.
+
+## Graph queries and algorithms
+
+Every tool answer comes from a traversal or a graph algorithm, not from reading files. This section lists what the product depends on, per rule 10.
+
+### Algorithms, and the tool each powers
+
+| Algorithm | Tool | The question it answers |
+|---|---|---|
+| BFS, reverse, depth-capped, over `DEPENDS_ON` | `blast_radius` | everything that depends on a file, with the path walked |
+| Shortest path (`algo.SPpaths`) | `why_connected` | how two artifacts connect, hop by hop |
+| PageRank over dependency edges (`algo.pageRank`) | `load_bearing` | the files the project leans on most |
+| Weakly connected components (`algo.WCC`) | `islands` | code or docs that nothing links to |
+| Label propagation (`algo.CDLP`) | `communities` | module clusters |
+| Bounded BFS from lexical seeds | `context_for` | the relevant subgraph for a task |
+| Depth-capped reverse walk over `ABOUT` / `DECIDED_IN` | `timeline` | the history of one artifact |
+
+### Cypher the FalkorDB adapter runs
+
+The graph is one `Cto` label; node ids are the same stable keys the file store writes (`file:src/cli.ts`), which is what keeps the two stores at parity. Edges carry their type in a `rel` property so a single relationship pattern can be parameterised.
+
+```cypher
+-- schema: index the id we look everything up by
+CREATE INDEX ON :Cto(id)
+
+-- write: batch a snapshot in
+UNWIND $rows AS row
+CREATE (n:Cto)
+SET n.id = row.id, n.kind = row.kind, n.name = row.name,
+    n.props = row.props, n.createdAt = row.createdAt, n.updatedAt = row.updatedAt
+
+-- write: one edge, idempotent on re-sync
+MATCH (a:Cto {id: $from}), (b:Cto {id: $to})
+MERGE (a)-[r {rel: $rel}]->(b)
+SET r.props = $props
+
+-- read: a node, and everything touching it
+MATCH (n:Cto {id: $id})
+RETURN n.id, n.kind, n.name, n.props, n.createdAt, n.updatedAt
+
+MATCH (a:Cto {id: $id})-[r]->(b:Cto)
+RETURN a.id, b.id, r.rel, r.props
+```
+
+Parameters travel as a `CYPHER key='value'` prefix, so no value is ever spliced into a query string.
+
+### Mapping to FalkorDB's native algorithms
+
+Each tool's algorithm has a FalkorDB equivalent, so graph mode can push the work into the database instead of computing it in-process:
+
+| Tool | Algorithm | FalkorDB procedure |
+|---|---|---|
+| `blast_radius` | reverse, depth-capped traversal over `DEPENDS_ON` | variable-length `MATCH`, or `algo.BFS` |
+| `why_connected` | shortest path between two nodes | `algo.SPpaths` (point to point) / `algo.SSpaths` (source to all) |
+| `load_bearing` | PageRank over dependency edges | `algo.pageRank` |
+| `islands` | weakly connected components | `algo.WCC` |
+| `communities` | label propagation | `algo.CDLP` |
+| `context_for` | bounded BFS from lexical seeds | variable-length `MATCH` with a depth bound |
+
+All procedures are invoked as `CALL algo.<name>()` and return via `YIELD`; see the FalkorDB algorithm pages for each signature.
+
+### Where the algorithms run
+
+- **File mode (default, offline):** algorithms execute in-process over the JSONL index (`src/index/graph.ts`), capped at 50k nodes with a clear `INDEX_TOO_LARGE` error above that. No server, no account.
+- **Graph mode (FalkorDB):** the same tools read from the graph, which is the shared memory substrate for every agent and machine. Pushing the traversals and rankings to the `algo.*` procedures above (roadmap Unit 2.3) is the next step; until it lands, graph mode reads the graph and the algorithms still run in-process.
+
+File mode is deliberately the lite mode: no shared memory across machines, no temporal-validity queries, and a hard scale ceiling. It exists so `npx cto-ai` works in any repo with zero setup — not as an equivalent to the graph.
 
 ## FalkorDB
 

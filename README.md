@@ -18,7 +18,7 @@ Working repo for the **Graph Hacks: Context for AI Agents** hackathon (powered b
 
 - **Status:** `0.1.0` — Phase 1 complete. Every command is implemented against the file-system store, with a FalkorDB adapter ready for Phase 2.
 - **Try it:** `cd cli && npm install && npm run build && node dist/cli.js --help`.
-- **npm name:** `ctoai` is claimed in `package.json` but **not yet published** — publish with `cd cli && npm publish` when ready.
+- **npm name:** published as **`cto-ai`** (the binary is `ctoai`). The unscoped name `ctoai` is blocked by npm's typosquatting guard — it is too close to `chai` and `btoa`. Publish with `cd cli && npm publish --access public`.
 
 ## Beginner guide
 
@@ -52,7 +52,7 @@ A short course for absolute beginners lives inside the resource collection at `D
   - `guide/` - the 16-module beginner course (start at `guide/00-start-here.md`).
   - `Hackathon-resources/` - raw resources (docs, transcripts, links) plus `automated-notes/`, one processed note per resource.
   - `project-notes/` - working notes while building, starting with the finalized cto-ai product review.
-- `cli/` - the `ctoai` npm package (TypeScript CLI: source, tests, build).
+- `cli/` - the `cto-ai` npm package (TypeScript CLI: source, tests, build).
 
 ## Hackathon resources
 

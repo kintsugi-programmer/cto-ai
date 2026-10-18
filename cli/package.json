@@ -1,10 +1,11 @@
 {
-  "name": "ctoai",
+  "name": "cto-ai",
   "version": "0.1.0",
   "description": "The persistent project brain for any coding agent - file-first, graph-powered, MCP-native.",
   "type": "module",
   "bin": {
-    "ctoai": "dist/cli.js"
+    "ctoai": "dist/cli.js",
+    "cto-ai": "dist/cli.js"
   },
   "files": [
     "dist"
