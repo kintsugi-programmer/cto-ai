@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { runRecord } from "../commands/record";
+import { runRecord } from "./record";
 import { toCtoaiError } from "../core/errors";
 import { openProject } from "../project/open";
 import { getTool, TOOL_NAMES, type ToolResult } from "../tools/catalog";
